@@ -25,7 +25,7 @@ services:
       - --config=/config/otel-collector.yaml
 
   tempo:
-    image: grafana/tempo:0.7.0
+    image: grafana/tempo:latest
     command: ["-config.file=/etc/tempo.yaml"]
     ports:
       - "3100:3100"
@@ -35,7 +35,7 @@ services:
       - ./example-data/tempo:/tmp/tempo
 
   grafana:
-    image: grafana/grafana:7.5.4
+    image: grafana/grafana:latest
     volumes:
       - ./config/datasources:/etc/grafana/provisioning/datasources
     environment:
